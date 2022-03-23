@@ -1,4 +1,5 @@
-package java.datastructure;
+package dataStructure;
+
 
 public class CeasarCyper {
 
