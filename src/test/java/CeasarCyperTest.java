@@ -12,5 +12,7 @@ public class CeasarCyperTest {
         String input = "Programming can be fun, so can cryptography; however they should not be combined";
         
         System.out.println(ceasarCyper.encrypt(input));
+
+        ceasarCyper.deCrypt("Moldoxjjfkd zxk yb crk, pl zxk zovmqldoxmev; eltbsbo qebv pelria klq yb zljyfkba");
     } 
 }
