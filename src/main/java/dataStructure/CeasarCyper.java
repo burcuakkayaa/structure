@@ -13,6 +13,12 @@ public class CeasarCyper {
         shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0, key);
         count = new int[26]; 
     }
+
+    public CeasarCyper() {
+
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       
+    }
     
 
     public String encrypt(String input) {
@@ -52,7 +58,7 @@ public class CeasarCyper {
     public String deCrypt(String message) {
 
         
-        int commonIndex = alphabet.indexOf('O');
+        int commonIndex = alphabet.indexOf('K');
         int[] frequence = countletters(message);
         int maxIndex = maxIndex(frequence);
         int dkey = maxIndex - commonIndex;
@@ -97,4 +103,27 @@ public class CeasarCyper {
 
         return count;
     }
+
+    public String encryptTwoKeys (String encryptedKey1 ,String encryptedKey2, String input){
+       
+     
+        StringBuilder finalEncrypted = new StringBuilder (input);
+     
+     
+         for (int i = 0 ; i <encryptedKey1.length();i +=2){
+         char currentChar = encryptedKey1.charAt(i);
+          finalEncrypted.replace(i, i+1,String.valueOf(currentChar));
+     
+     
+         }
+     
+         for (int i = 1 ; i <encryptedKey2.length();i +=2){
+         char currentChar = encryptedKey2.charAt(i);
+          finalEncrypted.replace(i, i+1,String.valueOf(currentChar));
+     
+     
+         }
+     
+     return finalEncrypted.toString();
+     }
 }
